@@ -1,0 +1,6 @@
+header, nav, #content, footer {
+    border: 1px solid black;
+    margin-bottom: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
