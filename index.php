@@ -29,6 +29,7 @@ while ($row = mysqli_fetch_assoc($result))
             <div class="col-2"><a href="new.php">New article</a></div>
         </nav>
         <div id="content" class="row">
+            <div class="col-12"><h1>Articles</h1></div>
             <div class="col">
                 <?php foreach ($data as $article): ?>
                 <article>
