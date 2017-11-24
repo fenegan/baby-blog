@@ -10,6 +10,9 @@ if (isset($_POST['title']) && isset($_POST['content']))
     $link = mysqli_connect('localhost', 'babyblog', 'toto42', 'babyblog');
     $q = "INSERT INTO `posts` (`id`, `title`, `content`) VALUES (NULL, '".$title."', '".$content."')";
     mysqli_query($link, $q);
+    
+    header('Location: index.php');
+    exit();
 }
 ?>
 <!doctype html>

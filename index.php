@@ -1,6 +1,6 @@
 <?php
 $link = mysqli_connect('localhost', 'babyblog', 'toto42', 'babyblog');
-$result = mysqli_query($link, 'SELECT * FROM posts');
+$result = mysqli_query($link, 'SELECT * FROM posts ORDER BY id DESC');
 $data = [];
 while ($row = mysqli_fetch_assoc($result))
 {
@@ -33,8 +33,9 @@ while ($row = mysqli_fetch_assoc($result))
                 <?php foreach ($data as $article): ?>
                 <article>
                     <h2><?= $article['title'] ?></h2>
-                    <div><?= $article['content'] ?></div>
+                    <div><?= nl2br($article['content']) ?></div>
                 </article>
+                <hr>
                 <?php endforeach; ?>
             </div>
         </div>
