@@ -1,3 +1,12 @@
+<?php
+$title = '';
+$content = '';
+if (isset($_POST['title']) && isset($_POST['content']))
+{
+    $title = htmlentities($_POST['title']);
+    $content = htmlentities($_POST['content']);
+}
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -24,11 +33,11 @@
                 <form action="new.php" method="POST">
                     <div class="form-group">
                         <label for="title">Title</label>
-                        <input type="text" name="title" id="title" class="form-control">
+                        <input type="text" name="title" id="title" class="form-control" value="<?= $title ?>">
                     </div>
                     <div class="form-group">
                         <label for="content">Content</label>
-                        <textarea name="content" id="content" class="form-control"></textarea>
+                        <textarea name="content" id="content" class="form-control"><?= $content ?></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Post</button>
                 </form>
