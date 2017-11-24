@@ -1,3 +1,12 @@
+<?php
+$link = mysqli_connect('localhost', 'babyblog', 'toto42', 'babyblog');
+$result = mysqli_query($link, 'SELECT * FROM posts');
+$data = [];
+while ($row = mysqli_fetch_assoc($result))
+{
+    $data[] = $row;
+}
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -21,7 +30,12 @@
         </nav>
         <div id="content" class="row">
             <div class="col">
-                Articles
+                <?php foreach ($data as $article): ?>
+                <article>
+                    <h2><?= $article['title'] ?></h2>
+                    <div><?= $article['content'] ?></div>
+                </article>
+                <?php endforeach; ?>
             </div>
         </div>
         <footer class="row">

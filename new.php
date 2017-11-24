@@ -7,8 +7,9 @@ if (isset($_POST['title']) && isset($_POST['content']))
     $content = htmlentities($_POST['content']);
     //$link = mysqli_connect('localhost', 'root', '', 'babyblog');
     //$link = mysqli_connect('localhost', 'root', 'root', 'babyblog');
-    $link = mysqli_connect('localhost', 'babyblog', 'xxx', 'babyblog');
-    mysqli_query($link, "INSERT INTO `posts` (`id`, `title`, `content`) VALUES (NULL, '".$title."', '".$content."')");
+    $link = mysqli_connect('localhost', 'babyblog', 'toto42', 'babyblog');
+    $q = "INSERT INTO `posts` (`id`, `title`, `content`) VALUES (NULL, '".$title."', '".$content."')";
+    mysqli_query($link, $q);
 }
 ?>
 <!doctype html>
