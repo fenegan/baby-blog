@@ -1,5 +1,5 @@
 <?php
-$link = mysqli_connect('localhost', 'babyblog', 'toto42', 'babyblog');
+require('init.php');
 $result = mysqli_query($link, 'SELECT * FROM posts ORDER BY id DESC');
 $data = [];
 while ($row = mysqli_fetch_assoc($result))

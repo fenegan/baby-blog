@@ -1,4 +1,5 @@
 <?php
+require('init.php');
 $title_article = '';
 $content = '';
 if (isset($_POST['title']) && isset($_POST['content']))
@@ -7,7 +8,6 @@ if (isset($_POST['title']) && isset($_POST['content']))
     $content = htmlentities($_POST['content']);
     //$link = mysqli_connect('localhost', 'root', '', 'babyblog');
     //$link = mysqli_connect('localhost', 'root', 'root', 'babyblog');
-    $link = mysqli_connect('localhost', 'babyblog', 'toto42', 'babyblog');
     $q = "INSERT INTO `posts` (`id`, `title`, `content`) VALUES (NULL, '".$title_article."', '".$content."')";
     mysqli_query($link, $q);
     

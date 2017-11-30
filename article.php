@@ -1,6 +1,6 @@
 <?php
+require('init.php');
 $id = $_GET['id'];
-$link = mysqli_connect('localhost', 'babyblog', 'toto42', 'babyblog');
 
 $message = '';
 if (isset($_POST['message']))

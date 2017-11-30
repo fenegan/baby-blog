@@ -18,6 +18,26 @@
         <nav class="row">
             <div class="col-2"><a href="index.php">Home</a></div>
             <div class="col-2"><a href="new.php">New article</a></div>
+            <div class="col-2">
+                <?php if (!isset($_SESSION['username'])): ?>
+                <a href="register.php">Register</a>
+                <?php endif; ?>
+            </div>
+            <div class="col-2"></div>
+            <div class="col-2">
+                <?php if (isset($_SESSION['username'])): ?>
+                <a href="logout.php">Logout</a>
+                <?php else: ?>
+                <a href="login.php">Login</a>
+                <?php endif; ?>
+            </div>
+            <div class="col-2">
+                <?php if (isset($_SESSION['username'])): ?>
+                Logged in as <?= $_SESSION['username'] ?>
+                <?php else: ?>
+                Not logged in
+                <?php endif; ?>
+            </div>
         </nav>
         <div id="content" class="row">
             <?php echo $content; ?>
