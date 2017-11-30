@@ -37,27 +37,27 @@ ob_start();
     <form action="register.php" method="POST">
         <div class="form-group">
             <label for="firstname">First name</label>
-            <input type="text" name="firstname" id="firstname" class="form-control" value="<?= $title_article ?>">
+            <input type="text" name="firstname" id="firstname" class="form-control" value="<?= $firstname ?>">
         </div>
         <div class="form-group">
             <label for="lastname">Last name</label>
-            <input type="text" name="lastname" id="lastname" class="form-control" value="<?= $title_article ?>">
+            <input type="text" name="lastname" id="lastname" class="form-control" value="<?= $lastname ?>">
         </div>
         <div class="form-group">
             <label for="username">Username</label>
-            <input type="text" name="username" id="username" class="form-control" value="<?= $title_article ?>">
+            <input type="text" name="username" id="username" class="form-control" value="<?= $username ?>">
         </div>
         <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" name="email" id="email" class="form-control" value="<?= $title_article ?>">
+            <input type="email" name="email" id="email" class="form-control" value="<?= $email ?>">
         </div>
         <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" name="password" id="password" class="form-control" value="<?= $title_article ?>">
+            <input type="password" name="password" id="password" class="form-control">
         </div>
         <div class="form-group">
             <label for="password_repeat">Repeat password</label>
-            <input type="password" name="password_repeat" id="password_repeat" class="form-control" value="<?= $title_article ?>">
+            <input type="password" name="password_repeat" id="password_repeat" class="form-control">
         </div>
         <button type="submit" class="btn btn-primary">Register</button>
     </form>

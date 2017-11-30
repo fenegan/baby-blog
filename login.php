@@ -20,10 +20,10 @@ if (!empty($_POST['username']) && !empty($_POST['password']))
         session_start();
         $_SESSION['id'] = $user['id'];
         $_SESSION['username'] = $user['username'];
-    }
     
-    header('Location: index.php');
-    exit();
+        header('Location: index.php');
+        exit();
+    }
 }
 
 $title = "Login";
@@ -34,11 +34,11 @@ ob_start();
     <form action="login.php" method="POST">
         <div class="form-group">
             <label for="username">Username</label>
-            <input type="text" name="username" id="username" class="form-control" value="<?= $title_article ?>">
+            <input type="text" name="username" id="username" class="form-control" value="<?= $username ?>">
         </div>
         <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" name="password" id="password" class="form-control" value="<?= $title_article ?>">
+            <input type="password" name="password" id="password" class="form-control">
         </div>
         <button type="submit" class="btn btn-primary">Login</button>
     </form>
