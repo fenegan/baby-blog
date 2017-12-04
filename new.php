@@ -8,9 +8,13 @@ if (isset($_POST['title']) && isset($_POST['content']))
     $content = htmlentities($_POST['content']);
     //$link = mysqli_connect('localhost', 'root', '', 'babyblog');
     //$link = mysqli_connect('localhost', 'root', 'root', 'babyblog');
-    $q = "INSERT INTO `posts` (`id`, `title`, `content`) VALUES (NULL, '".$title_article."', '".$content."')";
-    mysqli_query($link, $q);
-    
+    $q = "INSERT INTO `posts` (`id`, `title`, `content`) VALUES (NULL, ?, ?)";
+    $stmt = mysqli_prepare($link, $q);
+    mysqli_stmt_bind_param($stmt, 'ss', $title_article, $content);
+    mysqli_stmt_execute($stmt);
+    //die($q);
+    //mysqli_query($link, $q);
+
     header('Location: index.php');
     exit();
 }
